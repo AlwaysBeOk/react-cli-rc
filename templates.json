@@ -1,0 +1,8 @@
+{
+  "tpl": {
+    "base": {
+      "url": "https://github.com/AlwaysBeOk/webpack-base-config.git",
+      "branch": "master"
+    }
+  }
+}
