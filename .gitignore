@@ -38,3 +38,6 @@ components/**/*.jsx
 !components/**/__tests__/*.js
 !components/**/__tests__/*.js.snap
 /.history
+
+# 忽略生成的项目文件夹
+project

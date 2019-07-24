@@ -1,13 +1,13 @@
 {
-  "name": "an-cli",
+  "name": "cvs-react-cli",
   "version": "1.0.0",
-  "description": "逄先生第一次搭建cli",
+  "description": "CREATED REACT CLI BY CREATTO PANG",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "an": "bin/an"
+    "cvs": "bin/cvs"
   },
   "keywords": [
     "cli"
