@@ -1,0 +1,9 @@
+import { observable, action } from 'mobx';
+
+
+
+class ${storeName} {
+
+}
+
+export default new ${storeName}();

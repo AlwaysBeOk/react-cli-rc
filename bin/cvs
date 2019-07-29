@@ -15,12 +15,57 @@ program
 
 program
     .command('init')
+    .alias('i')
     .description('Generate a new project')
     .action(() => {
         require('../command/init')()
     })
 
-program.parse(process.argv)
+program
+    .command('generate [option] [name]')
+    .alias('g')
+    .description(`Generate a <component|store|...>
+                             option:
+                             <
+                               component === c,
+                               store === s
+                             >`
+                  )
+    .action((option, name) => {
+        let o;
+        switch (option) {
+          case 'c':
+           o = 'component'
+           break;
+          case 's':
+           o = 'store'
+           break;
+        }
+        require('../command/generate')(o,name)
+    })
+
+program
+    .command('start')
+    .description(`Start server`)
+    .action((option, name) => {
+        require('../command/server')()
+    })
+
+program
+    .command('build')
+    .description(`Start build`)
+    .action((option, name) => {
+        require('../command/build')()
+    })
+
+program
+    .parse(process.argv)
+
+//    program.option('-g, --generate', 'generate a component!')
+//           .option('-l, --list', 'show list')
+//    if(program.generate){require('../command/test')}
+//    if(program.list){console.log(2222)}
+
 
 if(!program.args.length){
   program.help()
