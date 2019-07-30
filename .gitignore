@@ -41,3 +41,5 @@ components/**/*.jsx
 
 # 忽略生成的项目文件夹
 project
+
+*.tgz

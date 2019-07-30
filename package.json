@@ -1,8 +1,8 @@
 {
   "name": "cvs-react-cli",
   "version": "1.0.0",
-  "description": "CREATED REACT CLI BY CREATTO PANG",
-  "main": "index.js",
+  "description": "A REACT-CLI CREATED BY CREATTO PANG",
+  "main": "bin/cvs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,14 +10,22 @@
     "cvs": "bin/cvs"
   },
   "keywords": [
-    "cli"
+    "cli",
+    "react-cli",
+    "create-react-app"
   ],
-  "author": "creatto",
+  "bugs": {
+    "github": "https://github.com/AlwaysBeOk/cvs-cli/issues"
+  },
+  "author": "creatto pang",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
     "commander": "^2.19.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.38.0"
   }
 }
