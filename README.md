@@ -1,20 +1,8 @@
-# an-cli
-my cli is the first write
 
-
-# Cli Overview
+# CVS-REACT-CLI Overview
 
 include init, generate, server, build
 
-# Use cli 
-
-# an-cli
-my cli is the first write
-
-
-# Cli Overview
-
-include init, generate, server, build
 
 # Use cli 
 
