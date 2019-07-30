@@ -25,7 +25,7 @@ module.exports = () => {
 
     console.log(chalk.white('\n Start generating...'));
 
-    exec(cmdStr, (error, stdout, stderr) => {
+    let workerProcess = exec(cmdStr, (error, stdout, stderr) => {
       if (error) {
         console.log(error);
         process.exit()
@@ -33,5 +33,13 @@ module.exports = () => {
       console.log(chalk.green('\n √ Generation completed!'),`\n Please \n cd ${projectName} && npm install \n`);
       process.exit()
     })
+
+    workerProcess.stdout.on('data', function (message) {
+      // console.log(message);
+    });
+
+    workerProcess.stderr.on('data', function (err) {
+      // console.log(err);
+    });
   })
 };
