@@ -19,11 +19,14 @@ module.exports = (option, name) => {
     case 'store':
       p = '../templates/store-template';
       break;
+    case 'service':
+      p = '../templates/service-template';
+      break;
   }
   templateFolderPath = path.resolve(__dirname, p);
 
   // 生成component
-  let gC = (err, files) => {
+  let gComponent = (err, files) => {
     //组件文件夹名
     fs.mkdir(`${currentpath}/${dirName}`, ()=> {
       files.forEach(templateName => {
@@ -44,30 +47,32 @@ module.exports = (option, name) => {
     })
   }
 
-  // 生成store
-  let gS = (err, files) => {
-    let currentName = name.replace(/^\w/g, a => a.toLowerCase()); // 首字母小写
-
+  // 生成store \service
+  let gS = (err, files, typeName, suffix) => {
+    let currentName = name.replace(/^\w/g, a => a.toLowerCase()), // 首字母小写
+    regexp = new RegExp(`${typeName}`, 'g'), className = new RegExp('\\${'+ typeName +'}', 'g');
+    console.log(regexp, className);
     // 生成文件的名称
-    let newStoreName = files[0].replace(/storeName/g, currentName).replace(/^\w/g, a => a.toLowerCase()).replace(/ts.txt/g, 'state.ts');
-      const data = fs
-        .readFileSync(`${templateFolderPath}/${files[0]}`)
-        .toString()
-        .replace(/\${storeName}/g, currentName)
-      fs.writeFile(`${currentpath}/${newStoreName}`, data, (err) => {
-        if (err) { console.log('writeFileError:', err);throw err;}
-        console.log(`${newStoreName}文件已生成`);
-      });
-    console.log(`The ${currentName} store is generated!`)
+    let newName = files[0].replace(regexp, currentName).replace(/^\w/g, a => a.toLowerCase()).replace(/ts.txt/g, `${suffix}.ts`);
+    const data = fs
+      .readFileSync(`${templateFolderPath}/${files[0]}`)
+      .toString()
+      .replace(className, currentName);
+    fs.writeFile(`${currentpath}/${newName}`, data, (err) => {
+      if (err) { console.log('writeFileError:', err);throw err;}
+      console.log(`${newName}文件已生成`);
+    });
+    console.log(`The ${currentName} ${suffix} is generated!`)
   }
-
 
   fs.readdir(templateFolderPath, 'utf8', (err, files) => {
     if(err) {console.log('ReadFileErr:',err)}
     if(option === 'component' || option === 'c'){
-      gC(err, files);
+      gComponent(err, files);
     }else if(option === 'store' || option === 's'){
-      gS(err, files);
+      gS(err, files, 'storeName', 'state');
+    } else if(option === 'service'){
+      gS(err, files, 'serviceName', 'service');
     }
   })
 };

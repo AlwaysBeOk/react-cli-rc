@@ -24,24 +24,21 @@ program
 program
     .command('generate [option] [name]')
     .alias('g')
-    .description(`Generate a <component|store|...>
+    .description(`Generate a <component|store|service|...>
                              option:
-                             <
-                               component === c,
-                               store === s
-                             >`
+                             <component store service>`
                   )
     .action((option, name) => {
-        let o;
-        switch (option) {
-          case 'c':
-           o = 'component'
-           break;
-          case 's':
-           o = 'store'
-           break;
-        }
-        require('../command/generate')(o,name)
+        //let o;
+        //switch (option) {
+        // case 'c':
+        //   o = 'component'
+        //   break;
+        //  case 's':
+        //   o = 'store'
+        //   break;
+        //}
+        require('../command/generate')(option,name)
     })
 
 program
