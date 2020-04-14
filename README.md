@@ -1,5 +1,5 @@
 
-# REACT-CLI-RC Overview
+# react-cli-rc overview
 
 include init, generate, server, build
 
@@ -17,11 +17,16 @@ include init, generate, server, build
 |start |  | 启动项目 | rc start
 |build |  | 构建项目  | rc build
 
+
+# Issues
+
+If you find some problems, please mention the [issue](https://github.com/AlwaysBeOk/react-cli-rc/issues)
+
 # Author
 
-My email : **heartgoodtired@163.com.**   
+My email : **heartgoodtired@163.com**   
  
- If you have any questions, please feel free to contact me. I also hope other partners can join me, and perfect it.
+If you have any questions, please feel free to contact me. I also hope other partners can join me, and perfect it.
 
 
 
