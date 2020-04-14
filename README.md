@@ -1,5 +1,5 @@
 
-# CVS-REACT-CLI Overview
+# REACT-CLI-RC Overview
 
 include init, generate, server, build
 
@@ -12,10 +12,10 @@ include init, generate, server, build
 
 |order | param | explanation | demo|
 |:-- | :-: | :-: | :-:|
-|init | | 生成一个react项目(简写 cvs i)| cvs init
-|generate |[option]「component 、store、service」 [name] | 生成component、store、service| cvs generate component test|
-|start |  | 启动项目 | cvs start
-|build |  | 构建项目  | cvs build
+|init | | 生成一个react项目(简写 rc i)| rc init
+|generate |[option]「component 、store、service」 [name] | 生成component、store、service| rc generate component test|
+|start |  | 启动项目 | rc start
+|build |  | 构建项目  | rc build
 
 # Author
 

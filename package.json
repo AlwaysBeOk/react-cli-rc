@@ -1,21 +1,22 @@
 {
-  "name": "cvs-react-cli",
-  "version": "1.0.2",
-  "description": "A REACT-CLI CREATED BY CREATTO PANG",
-  "main": "bin/cvs",
+  "name": "react-cli-rc",
+  "version": "1.0.3",
+  "description": "A react-cli created by creatto",
+  "main": "bin/rc",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "cvs": "bin/cvs"
+    "rc": "bin/rc"
   },
   "keywords": [
     "cli",
     "react-cli",
+    "react-cli-rc",
     "create-react-app"
   ],
   "bugs": {
-    "github": "https://github.com/AlwaysBeOk/cvs-cli/issues"
+    "github": "https://github.com/AlwaysBeOk/react-cli-rc/issues"
   },
   "author": "creatto pang",
   "license": "ISC",
