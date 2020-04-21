@@ -1,4 +1,4 @@
-@import "~@assets/style/color";
+// @import "~@assets/style/color";
 
 .${component-name}{
 
