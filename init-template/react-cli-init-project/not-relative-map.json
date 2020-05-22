@@ -1,0 +1,5 @@
+{
+  "components": "src/components",
+  "utils": "src/utils",
+  "stories": "src/stories"
+}

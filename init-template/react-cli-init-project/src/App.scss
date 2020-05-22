@@ -1,0 +1,36 @@
+
+.ant-layout-sider{
+	height: 100vh;
+
+	.ant-menu.ant-menu-root{
+		border: none;
+		height: calc(100vh - 64px);
+		overflow-y: auto;
+
+		.ant-menu-sub{
+			overflow-x: hidden;
+		}
+
+		.ant-menu-vertical .menu-title {
+			display: none;
+		}
+	}
+}
+.trigger {
+	font-size: 18px;
+	line-height: 64px;
+	padding: 0 24px;
+	cursor: pointer;
+	transition: color 0.3s;
+}
+
+.trigger:hover {
+	color: #1890ff;
+}
+
+.logo {
+	color: white;
+	background: blue;
+	box-sizing: content-box;
+	overflow-x: hidden;
+}

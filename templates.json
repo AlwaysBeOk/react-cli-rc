@@ -1,8 +1,7 @@
 {
   "tpl": {
     "base": {
-      "url": "https://github.com/AlwaysBeOk/cvs-react-cli-project.git",
-      "branch": "master"
+      "url" : "./init-template/react-cli-init-project"
     }
   }
 }
