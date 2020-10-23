@@ -1,6 +1,6 @@
 {
   "name": "react-cli-rc",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A react-cli created by creatto",
   "main": "bin/rc",
   "scripts": {
