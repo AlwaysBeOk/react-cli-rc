@@ -8,7 +8,7 @@ module.exports = () => {
 
   console.log(chalk.white('\n Start build...'));
 
-  let workerProcess = exec(cmdStr, (error, stdout, stderr) => {
+  exec(cmdStr, (error, stdout, stderr) => {
     console.log(stdout);
     if (error) {
       console.log(error);
@@ -17,13 +17,5 @@ module.exports = () => {
     console.log(chalk.green('\n Build failed!'));
     process.exit()
   })
-
-  workerProcess.stdout.on('data', function (message) {
-    console.log(message);
-  });
-
-  workerProcess.stderr.on('data', function (err) {
-    console.log(err);
-  });
 
 };

@@ -1,5 +1,9 @@
+## Start
+```
+npm install react-cli-rc -g
+```
 
-# react-cli-rc overview
+## react-cli-rc overview
 
 include init, generate, server, build
 
@@ -8,21 +12,23 @@ include init, generate, server, build
 3. server 启动服务
 4. build 生成打包后的项目
 
-# Use cli 
+## Use cli 
 
 |order | param | explanation | demo|
-|:-- | :-: | :-: | :-:|
+|:--: | :-: | :-: | :-: |
 |init | | 生成一个react项目(简写 rc i)| rc init
-|generate |[option]「component 、store、service」 [name] | 生成component、store、service| rc generate component test|
+|generate | <schematic> [name] | 生成component、store、service| rc generate component test|
 |start |  | 启动项目 | rc start
 |build |  | 构建项目  | rc build
 
+## example
 
-# Issues
+
+## Issues
 
 If you find some problems, please mention the [issue](https://github.com/AlwaysBeOk/react-cli-rc/issues)
 
-# Author
+## Author
 
 My email : **heartgoodtired@163.com**   
  

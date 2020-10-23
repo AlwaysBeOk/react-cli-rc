@@ -23,14 +23,15 @@ module.exports = () => {
 
     // git命令，远程拉取项目并自定义项目名
     // let cmdStr = `git clone ${gitUrl} ${projectName} && cd ${projectName} && git checkout ${branch}`;
-
     initTemplateUrl = config.tpl[tplName].url;
     // 修改为本地模版不使用远程模版
-    let cmdStr = `cp -r ${initTemplateUrl} ${localPath} && mv ./react-cli-init-project ./${projectName}`
+    let cmdStr = `cp -r ${initTemplateUrl} ${localPath} && 
+    rm -rf ./${projectName} && 
+    mv -f ./react-cli-init-project ./${projectName}`;
 
     console.log(chalk.white('\n Start generating...'));
 
-    let workerProcess = exec(cmdStr, (error, stdout, stderr) => {
+    exec(cmdStr, (error, stdout, stderr) => {
       if (error) {
         console.log(error);
         process.exit()
@@ -44,12 +45,16 @@ module.exports = () => {
       process.exit()
     })
 
-    workerProcess.stdout.on('data', function (message) {
-      // console.log(message);
-    });
 
-    workerProcess.stderr.on('data', function (err) {
-      // console.log(err);
-    });
+    // 普及知识。
+    // 使用spawn需要下面两个函数进行监听
+    // workerProcess.stdout.on('data', function (message) {
+    //   console.log(message);
+    // });
+    //
+    // workerProcess.stderr.on('close', function () {
+    // });
+
+    //exec 可以接受最大200k shell返回数据，而spawn可以接受任意返回数据，一般用于文件读取，图像处理等
   })
 };

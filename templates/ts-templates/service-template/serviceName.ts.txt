@@ -1,0 +1,12 @@
+import Axios from 'axios';
+
+
+
+class ${serviceName} {
+
+  get () {
+    return Axios.get('http://xxx.com:82/api/get').then((res) => console.log(res))
+  }
+}
+
+export default new ${serviceName}();

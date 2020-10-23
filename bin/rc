@@ -1,4 +1,5 @@
 #!/usr/bin/env node --harmony
+
 'use strict'
  // 定义脚手架的文件路径
 process.env.NODE_PATH = __dirname + '/../node_modules/'
@@ -11,7 +12,7 @@ program
 
 // 定义使用方法
 program
-    .usage('<command>')
+    .usage('<command> [option] [name]')
 
 program
     .command('init')
@@ -22,47 +23,33 @@ program
     })
 
 program
-    .command('generate [option] [name]')
+    .command('generate <schematic> [name]')
+    // .option('-f --find')
+    .option('-u --use [type]', 'use js or ts')
     .alias('g')
     .description(`Generate a <component|store|service|...>
-                             option:
-                             <component store service>`
+                             schematic: component | store | service`
                   )
-    .action((option, name) => {
-        //let o;
-        //switch (option) {
-        // case 'c':
-        //   o = 'component'
-        //   break;
-        //  case 's':
-        //   o = 'store'
-        //   break;
-        //}
-        require('../command/generate')(option,name)
+    .action((schematic, name, command) => {
+        require('../command/generate')(schematic,name,command.use)
     })
 
 program
     .command('start')
     .description(`Start server`)
-    .action((option, name) => {
+    .action(() => {
         require('../command/server')()
     })
 
 program
     .command('build')
     .description(`Start build`)
-    .action((option, name) => {
+    .action(() => {
         require('../command/build')()
     })
 
 program
     .parse(process.argv)
-
-//    program.option('-g, --generate', 'generate a component!')
-//           .option('-l, --list', 'show list')
-//    if(program.generate){require('../command/test')}
-//    if(program.list){console.log(2222)}
-
 
 if(!program.args.length){
   program.help()

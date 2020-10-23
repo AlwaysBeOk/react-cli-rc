@@ -1,0 +1,21 @@
+import * as React from 'react';
+import { observer } from 'mobx-react';
+
+const styles = require('./index.scss');
+
+@observer
+class ${ComponentName} extends React.Component {
+
+  defaultProps = {
+
+  }
+
+  render() {
+    return (
+      <div className={styles.${component-name}}>
+          ${ComponentName}
+      </div>
+    );
+  }
+}
+export default ${ComponentName};

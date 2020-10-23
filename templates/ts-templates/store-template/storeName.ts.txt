@@ -1,0 +1,14 @@
+import { observable, action } from 'mobx';
+
+
+
+class ${storeName} {
+  @observable name = 'xiaoming';
+
+  @action changeName (){
+    this.name = 'xiaohua';
+  }
+
+}
+
+export default new ${storeName}();
